@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, Arial, Helvetica, sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Fuentes comunes para alta legibilidad */
+    background-color: #f4f7f6; /* Un gris muy claro, reduce el reflejo del sol */
+    color: #333333;            /* Texto oscuro para alta legibilidad */
+    padding: 15px;
+}
+.header {
+    text-align: center;      /* Centramos el título en la pantalla */
+    padding: 10px 0 20px 0;  /* Damos espacio arriba y abajo */
+
+}
+.header-title {
+    color: #1b4332;          /* Tu verde oscuro agrícola */
+    font-size: 1.6rem;       /* Tamaño ideal para leer en pantallas móviles */
+    font-weight: 700;        /* Letra gruesa e imponente */
+}
+.header-left {
+    display: flex;          /* Usamos flexbox para alinear los campos */
+    flex-wrap: wrap;        /* Permite que los campos se ajusten en pantallas pequeñas */
+    gap: 15px;              /* Espacio entre los campos */
+    justify-content: center; /* Centra los campos horizontalmente */
+    margin-bottom: 20px;     /* Espacio debajo de la sección de campos */
+}
+.card{
+    background-color: white; /* Fondo blanco para contraste */
+    border: 1px solid #e0e0e0; /* Borde suave para definir la tarjeta */
+    border-radius: 8px;        /* Bordes redondeados para un diseño moderno */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidad */
+    padding: 20px;  
+    margin-bottom: 20px;     /* Espacio debajo de la tarjeta */
+}
+.card-title {
+    font-size: 1.2rem;       /* Tamaño de título para destacar */
+    color: #1b4332;          /* Color verde oscuro para los títulos */
+    margin-bottom: 10px;     /* Espacio debajo del título */
+    font-weight: 600;        /* Letra semigruesa para los títulos */
+}
+.fenologia-grid, .plaga-grid {
+    display: grid;          /* Usamos grid para organizar los campos de fenología */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Columnas flexibles que se ajustan al tamaño de la pantalla */
+    gap: 15px;              /* Espacio entre los campos */
+}
+.item {
+    display: flex;          /* Usamos flexbox para alinear el label y el input */
+    flex-direction: column; /* Colocamos el label encima del input */
+}
+input[type="number"]
+input[type="text"],
+select {
+    padding: 10px;           /* Espacio interno para facilitar la interacción */
+    border: 1px solid #ced4da; /* Borde suave para los inputs */
+    width: 100%;              /* Los inputs ocupan todo el ancho de su contenedor */
+    border-radius: 4px;     /* Bordes redondeados para un diseño moderno */
+    font-size: 1rem;        /* Tamaño de fuente adecuado para móviles */
+}
+.btn-guardar {
+    background-color: #1b4332; /* Tu verde oscuro agrícola */
+    color: white;            /* Texto blanco para contraste */
+    border: none;  
+    border-radius: 4px;     /* Bordes redondeados para un diseño moderno */
+    width: 100%;              /* El botón ocupa todo el ancho de su contenedor */
+    padding: 12px 20px;     /* Espacio interno para facilitar la interacción */
+    font-size: 1rem;        /* Tamaño de fuente adecuado para móviles */
+    text-align: center;     /* Centramos el botón */
+    margin-top: 20px;      /* Espacio arriba del botón */
+}

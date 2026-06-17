@@ -7,16 +7,23 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+<!-- cabecera de la página -->
+    <header class="header">
+        <h2 class="header-title">Monitoreo de Campo</h2>
+    </header>
 
-    <form id="formMonitoreo" class="main-grid">
-
-        <header class="header">
-            <h2 class="header-title">Monitoreo de Campo</h2>
+    <main class="form-content">
+        <!-- Estructura principal del formulario de monitoreo de campo -->
+        <form id="formMonitoreo" class="main-grid">
+            
             <div class="header-left">
-                
                 <div class="campo-turno">
                     <label for="turno">Turno</label>
-                    <input type="text" id="turno" placeholder="Ej: Mañana" required />
+                    <input type="text" id="turno" placeholder="Ej: T-11" required />
+                </div>
+                <div class="campo-lote">
+                    <label for="lote">Lote</label>
+                    <input type="text" id="lote" placeholder="Ej: 23A" required />
                 </div>
 
                 <div class="campo-parada">
@@ -27,22 +34,20 @@
                 <div class="campo-fenologia">
                     <label for="estadoFenologico">Estado fenológico</label>
                     <select id="estadoFenologico">
+                        <option value="brotacion" selected>Selecciona Fenologia</option>
                         <option value="brotacion">Brotación</option>
-                        <option value="crecimiento" selected>Crecimiento vegetativo</option>
+                        <option value="crecimiento">Crecimiento vegetativo</option>
                         <option value="floracion">Floración</option>
                         <option value="fructificacion">Fructificación</option>
                         <option value="maduracion">Maduración</option>
                     </select>
                 </div>
-
             </div>
-        </header>
-
-        <main class="form-content">
 
             <fieldset class="card fenologia">
                 <legend class="card-title">Fenología</legend>
                 <div class="fenologia-grid">
+                    
                     <div class="item">
                         <label for="brotes">Brotes</label>
                         <input type="number" id="brotes" value="0" min="0" step="1" />
@@ -109,11 +114,11 @@
             </fieldset>
 
             <div class="acciones">
-                <button type="submit" class="btn-guardar">GUARDAR REGISTRO</button>
+                <button type="submit" class="btn-guardar">GUARDAR</button>
             </div>
 
-        </main>
-    </form>
+        </form>
+    </main>
 
     <footer class="footer">
         <span>© 2026 · Monitoreo Integrado Agrícola Enterprise</span>
