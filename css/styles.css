@@ -1,0 +1,183 @@
+/* ==========================================================================
+   1. RESET GLOBAL Y CONFIGURACIÓN BASE
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    background-color: #f4f7f6; /* Gris claro que reduce el reflejo del sol en campo */
+    color: #333333;            /* Alta legibilidad */
+    padding: 15px;
+}
+
+/* ==========================================================================
+   2. CABECERA PRINCIPAL
+   ========================================================================== */
+.header {
+    text-align: center;
+    padding: 10px 0 20px 0;
+}
+
+.header-title {
+    color: #1b4332; /* Verde oscuro agrícola institucional */
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   3. COMPONENTE METADATOS (Turno, Lote, Parada)
+   ========================================================================== */
+.header-left {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Estilos específicos para que el select y los inputs de cabecera se organicen */
+.campo-turno, .campo-lote, .campo-parada, .campo-fenologia {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 140px; /* Base flexible para que se acomoden lado a lado si hay espacio */
+}
+
+.campo-parada {
+    justify-content: center;
+    align-items: center;
+}
+
+.badge-parada {
+    background-color: #1b4332;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* ==========================================================================
+   4. ARQUITECTURA DE COMPONENTES TARJETA (Cards Modernas)
+   ========================================================================== */
+.card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    overflow: hidden; /* Evita que los bordes internos sobresalgan */
+}
+
+/* Cabeza del Componente: Actúa como el botón disparador */
+.card-header {
+    background-color: #ffffff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between; /* Título a la izquierda, flecha a la derecha */
+    align-items: center;
+    cursor: pointer;                /* Indica que es cliqueable */
+    user-select: none;              /* Evita que se seleccione el texto al dar doble toque */
+    border-bottom: 1px solid #f4f7f6;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: #1b4332;
+    font-weight: 600;
+}
+
+/* Flecha indicadora de estado con animación */
+.icon-arrow {
+    color: #1b4332;
+    font-size: 0.9rem;
+    transition: transform 0.3s ease; /* Giro suave cuando se inyecte una clase */
+}
+
+/* Cuerpo del Componente: Contenedor de los datos */
+.card-body {
+    padding: 20px;
+}
+
+/* ==========================================================================
+   5. DISTRIBUCIÓN DE MALLAS (CSS Grid Interno)
+   ========================================================================== */
+.fenologia-grid, .plaga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item label, .header-left label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #555555;
+}
+
+/* ==========================================================================
+   6. CONTROLES DE FORMULARIO (Inputs y Selects)
+   ========================================================================== */
+input[type="number"],
+input[type="text"],
+select {
+    padding: 12px; /* Un poco más alto para facilitar el toque táctil */
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+    background-color: #fafafa;
+    color: #333333;
+    transition: border-color 0.2s ease;
+}
+
+/* Efecto de foco profesional cuando el operario está escribiendo */
+input:focus, select:focus {
+    outline: none;
+    border-color: #1b4332;
+    background-color: #ffffff;
+}
+
+/* ==========================================================================
+   7. ACCIONES Y ESTADOS (Botones y Controladores)
+   ========================================================================== */
+.btn-guardar {
+    background-color: #1b4332;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(27, 67, 50, 0.2);
+    transition: background-color 0.2s ease;
+}
+
+.btn-guardar:active {
+    background-color: #143225; /* Efecto visual de hundimiento al presionar en celular */
+}
+
+/* CONTROL DE INTERRUPTORES ESTADO Abierto/Cerrado */
+.oculto {
+    display: none !important; /* Fuerza la desaparición limpia del cuerpo */
+}
+
+.rotado {
+    transform: rotate(-90deg); /* La flecha apuntará a la derecha cuando esté cerrado */
+}

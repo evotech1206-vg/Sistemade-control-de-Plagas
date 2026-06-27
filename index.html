@@ -1,129 +1,32 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
+<!doctype html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sistema de Monitoreo de Campo v2.0</title>
-    <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-<!-- cabecera de la página -->
-    <header class="header">
-        <h2 class="header-title">Monitoreo de Campo</h2>
-    </header>
+    <link rel="stylesheet" href="css/auth.css" />
+    <link rel="icon" href="img/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Login Monitoreo</title>
+  </head>
+  <body>
+    
+    <main class="login-container">
+      <form action="/login" method="post" id="loginForm">
+        <h1>MIA</h1>
+        <p>Monitoreo Integrado Agrícola</p>
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" name="username" required />
 
-    <main class="form-content">
-        <!-- Estructura principal del formulario de monitoreo de campo -->
-        <form id="formMonitoreo" class="main-grid">
-            
-            <div class="header-left">
-                <div class="campo-turno">
-                    <label for="turno">Turno</label>
-                    <input type="text" id="turno" placeholder="Ej: T-11" required />
-                </div>
-                <div class="campo-lote">
-                    <label for="lote">Lote</label>
-                    <input type="text" id="lote" placeholder="Ej: 23A" required />
-                </div>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" required />
 
-                <div class="campo-parada">
-                    <span class="label-parada">N° Parada</span>
-                    <span class="badge-parada" id="paradaDisplay">1</span>
-                </div>
-
-                <div class="campo-fenologia">
-                    <label for="estadoFenologico">Estado fenológico</label>
-                    <select id="estadoFenologico">
-                        <option value="brotacion" selected>Selecciona Fenologia</option>
-                        <option value="brotacion">Brotación</option>
-                        <option value="crecimiento">Crecimiento vegetativo</option>
-                        <option value="floracion">Floración</option>
-                        <option value="fructificacion">Fructificación</option>
-                        <option value="maduracion">Maduración</option>
-                    </select>
-                </div>
-            </div>
-
-            <fieldset class="card fenologia">
-                <legend class="card-title">Fenología</legend>
-                <div class="fenologia-grid">
-                    
-                    <div class="item">
-                        <label for="brotes">Brotes</label>
-                        <input type="number" id="brotes" value="0" min="0" step="1" />
-                    </div>
-                    <div class="item">
-                        <label for="terminales">Terminales</label>
-                        <input type="number" id="terminales" value="0" min="0" step="1" />
-                    </div>
-                    <div class="item">
-                        <label for="ramas-nuevas">Ramas nuevas</label>
-                        <input type="number" id="ramas-nuevas" value="0" min="0" step="1" />
-                    </div>
-                    <div class="item">
-                        <label for="flores">Flores</label>
-                        <input type="number" id="flores" value="0" min="0" step="1" />
-                    </div>
-                    <div class="item">
-                        <label for="frutos">Frutos</label>
-                        <input type="number" id="frutos" value="0" min="0" step="1" />
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset class="card plaga">
-                <legend class="card-title"># Chloridea virescens</legend>
-                <div class="plaga-grid">
-                    <div class="item">
-                        <label for="posturas">N° Posturas / planta</label>
-                        <input type="number" id="posturas" value="0" min="0" step="0.1" />
-                    </div>
-                    <div class="item">
-                        <label for="larvas">N° Larvas / planta</label>
-                        <input type="number" id="larvas" value="0" min="0" step="0.1" />
-                    </div>
-                    <div class="item">
-                        <label for="brotes-danados">N° Brotes dañados</label>
-                        <input type="number" id="brotes-danados" value="0" min="0" step="1" />
-                    </div>
-                    <div class="item">
-                        <label for="terminales-danados">N° Terminales dañados</label>
-                        <input type="number" id="terminales-danados" value="0" min="0" step="1" />
-                    </div>
-                    <div class="item">
-                        <label for="ramas-nuevas-danados">N° Ramas nuevas dañados</label>
-                        <input type="number" id="ramas-nuevas-danados" value="0" min="0" step="1" />
-                    </div>
-                    <div class="item">
-                        <label for="racimo-floral-posturas">Racimo Floral - N° Posturas</label>
-                        <input type="number" id="racimo-floral-posturas" value="0" min="0" step="1" />
-                    </div>
-                    <div class="item">
-                        <label for="racimo-floral-larvas">Racimo Floral - N° Larvas</label>
-                        <input type="number" id="racimo-floral-larvas" value="0" min="0" step="1" />
-                    </div>
-                    <div class="item">
-                        <label for="frutos-posturas">Frutos - N° Posturas</label>
-                        <input type="number" id="frutos-posturas" value="0" min="0" step="1" />
-                    </div>
-                    <div class="item">
-                        <label for="frutos-larvas">Frutos - N° Larvas</label>
-                        <input type="number" id="frutos-larvas" value="0" min="0" step="1" />
-                    </div>
-                </div>
-            </fieldset>
-
-            <div class="acciones">
-                <button type="submit" class="btn-guardar">GUARDAR</button>
-            </div>
-
-        </form>
+        <button type="submit">Iniciar Sesion</button>
+      </form>
     </main>
-
-    <footer class="footer">
-        <span>© 2026 · Monitoreo Integrado Agrícola Enterprise</span>
-    </footer>
-
-    <script src="controlplagas.js"></script>
-</body>
+    <script src="js/auth.js"></script>
+  </body>
 </html>
